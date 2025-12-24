@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redeem Your Reward</title>
+  <style>
+    :root{--accent:#FF9900;--bg:#f4f4f4;--dark:#111827;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, Arial, Helvetica, sans-serif;margin:0;background:var(--bg);color:var(--dark);-webkit-font-smoothing:antialiased}
+    .page{max-width:900px;margin:48px auto;padding:24px}
+    .card{background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(16,24,40,0.06);padding:28px}
+    header.logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    header.logo img{width:110px}
+    h1{font-size:22px;margin:6px 0}
+    p.lead{color:var(--muted);margin:8px 0 18px}
+    .form-row{display:flex;gap:12px;align-items:center}
+    .input{flex:1}
+    input[type=text]{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:6px;font-size:15px}
+    button.btn{background:var(--accent);color:#111;border:none;padding:12px 18px;border-radius:6px;font-weight:600;cursor:pointer}
+    .info{margin-top:12px;font-size:13px;color:var(--muted)}
+    .success{display:none;padding:12px;border-radius:6px;background:#ecfdf5;color:#065f46;margin-top:12px}
+    footer{margin-top:18px;font-size:13px;color:var(--muted)}
+    @media (max-width:480px){.form-row{flex-direction:column}button.btn{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="card" role="main">
+      <header class="logo">
+        <img src="https://via.placeholder.com/110x30?text=Amazon" alt="Amazon" />
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Special reward</div>
+          <h1>Claim your Amazon Reward</h1>
+        </div>
+      </header>
+
+      <p class="lead">Enter your email or promo code below to redeem your reward. The discount will be applied at checkout.</p>
+
+      <form id="redeem-form" novalidate>
+        <div class="form-row">
+          <div class="input">
+            <label for="email" class="sr-only">Email or promo code</label>
+            <input id="email" name="email" type="text" placeholder="Enter email or promo code" aria-label="Email or promo code" required />
+          </div>
+          <div>
+            <button class="btn" id="redeem-btn" type="submit">Redeem</button>
+          </div>
+        </div>
+        <div id="feedback" class="success" role="status" aria-live="polite"></div>
+        <div id="error" class="info" style="color:#b91c1c;display:none"></div>
+      </form>
+
+      <div class="info">Offer valid for one-time use per account. Terms apply.</div>
+
+      <footer>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+          <a href="#" style="color:var(--muted)">Terms</a>
+          <a href="#" style="color:var(--muted)">Privacy</a>
+          <a href="#" style="color:var(--muted)">Help</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // Simple client-side validation + toast-like success
+    document.getElementById('redeem-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      const input = document.getElementById('email');
+      const feedback = document.getElementById('feedback');
+      const error = document.getElementById('error');
+      error.style.display = 'none';
+      feedback.style.display = 'none';
+      const val = input.value.trim();
+      if(!val){ error.textContent = 'Please enter an email or code.'; error.style.display='block'; input.focus(); return; }
+      // Basic email-ish check if contains @
+      if(val.includes('@') && !/^\S+@\S+\.\S+$/.test(val)){
+        error.textContent = 'Please enter a valid email address.'; error.style.display='block'; input.focus(); return;
+      }
+      // Simulate redeem flow
+      document.getElementById('redeem-btn').disabled = true;
+      document.getElementById('redeem-btn').textContent = 'Applying...';
+      setTimeout(()=>{
+        feedback.textContent = 'Success — reward applied! Check your cart at checkout.';
+        feedback.style.display = 'block';
+        document.getElementById('redeem-btn').textContent = 'Redeem';
+        document.getElementById('redeem-btn').disabled = false;
+      }, 900);
+    });
+  </script>
+</body>
+</html>

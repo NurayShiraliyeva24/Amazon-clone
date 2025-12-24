@@ -1,0 +1,210 @@
+<!--
+  Amazon-style marketing email (HTML email)
+  - Table-based, inline CSS for email client compatibility
+  - Responsive media queries (mobile-first fallbacks for clients that support them)
+  - Uses placeholder images (replace with real hosted assets)
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon - Winter Sale</title>
+  <style>
+    body{margin:0;padding:0;background:#f3f4f6;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+    img{display:block;border:0;outline:none;text-decoration:none}
+    a{color:#111;text-decoration:none}
+    table{border-collapse:collapse}
+    .container{max-width:700px;margin:0 auto}
+    @media only screen and (max-width:600px){
+      .stack{display:block!important;width:100%!important}
+      .mobile-center{text-align:center!important}
+      .hero-title{font-size:20px!important}
+      .product-col{display:inline-block!important;width:50%!important}
+      .hide-mobile{display:none!important}
+    }
+  </style>
+</head>
+<body style="background:#f3f4f6;">
+  <center>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding:20px 10px;">
+          <table role="presentation" width="100%" class="container" style="background:#ffffff;border:1px solid #e6e6e6;border-radius:6px;overflow:hidden;">
+            <!-- top bar / logo -->
+            <tr>
+              <td style="padding:16px 20px;background:#ffffff;">
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td style="vertical-align:middle;">
+                      <img src="https://via.placeholder.com/140x30?text=Amazon" alt="Amazon" width="140" style="display:block" />
+                    </td>
+                    <td style="text-align:right;vertical-align:middle;color:#6b7280;font-family:Arial,Helvetica,sans-serif;font-size:13px;">
+                      Winter Sale — Up to 40% off
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- hero image with text overlay area (overlay simulated with table content) -->
+            <tr>
+              <td style="background:#ffffff;padding:0;">
+                <img src="https://via.placeholder.com/700x300?text=Winter+Sale+Banner" alt="Winter Sale banner" width="700" style="width:100%;height:auto;display:block" />
+              </td>
+            </tr>
+
+            <!-- hero copy + CTA -->
+            <tr>
+              <td style="padding:18px 20px 8px 20px;">
+                <h1 class="hero-title" style="font-family:Arial,Helvetica,sans-serif;font-size:26px;margin:0 0 8px 0;color:#111;">Winter Sale Starts Now — Save Up to 40%</h1>
+                <p style="font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#374151;margin:0 0 16px;">Selected items across electronics, home, and more. Limited time only.</p>
+                <table role="presentation" cellpadding="0" cellspacing="0" style="margin-bottom:8px;">
+                  <tr>
+                    <td style="background:#ff9900;border-radius:4px;">
+                      <a href="https://example.com/redeem" style="display:inline-block;padding:12px 22px;font-family:Arial,Helvetica,sans-serif;color:#111;font-weight:700;text-decoration:none;">Shop now</a>
+                    </td>
+                    <td style="width:12px"></td>
+                    <td style="background:#ffffff;border:1px solid #e6e6e6;border-radius:4px;">
+                      <a href="https://example.com/deals" style="display:inline-block;padding:12px 18px;font-family:Arial,Helvetica,sans-serif;color:#111;font-weight:600;text-decoration:none;">See deals</a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- divider -->
+            <tr>
+              <td style="padding:0 20px;">
+                <hr style="border:none;height:1px;background:#eef2f6;margin:12px 0" />
+              </td>
+            </tr>
+
+            <!-- products grid (2 columns desktop -> wrap to 2 per row mobile) -->
+            <tr>
+              <td style="padding:0 20px 18px 20px;">
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td style="vertical-align:top;padding-bottom:12px;">
+                      <table role="presentation" width="100%">
+                        <tr>
+                          <td class="product-col" style="width:50%;padding-right:8px;vertical-align:top;">
+                            <table role="presentation" width="100%" style="background:#ffffff;border-radius:6px;">
+                              <tr>
+                                <td style="padding:8px;">
+                                  <img src="https://via.placeholder.com/320x200?text=Headphones" alt="Wireless Headphones" width="320" style="width:100%;height:auto;border-radius:6px;" />
+                                  <div style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#111;"><strong>Wireless Headphones</strong></div>
+                                  <div style="font-size:13px;color:#6b7280;margin-top:4px;">Now 30% off</div>
+                                  <div style="padding-top:10px;"><a href="https://example.com/product1" style="background:#ff9900;padding:10px 14px;border-radius:4px;color:#111;font-weight:700;text-decoration:none;display:inline-block;">Redeem</a></div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+
+                          <td class="product-col" style="width:50%;padding-left:8px;vertical-align:top;">
+                            <table role="presentation" width="100%" style="background:#ffffff;border-radius:6px;">
+                              <tr>
+                                <td style="padding:8px;">
+                                  <img src="https://via.placeholder.com/320x200?text=Smart+Speaker" alt="Smart Speaker" width="320" style="width:100%;height:auto;border-radius:6px;" />
+                                  <div style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#111;"><strong>Smart Speaker</strong></div>
+                                  <div style="font-size:13px;color:#6b7280;margin-top:4px;">Bundle deals</div>
+                                  <div style="padding-top:10px;"><a href="https://example.com/product2" style="background:#ff9900;padding:10px 14px;border-radius:4px;color:#111;font-weight:700;text-decoration:none;display:inline-block;">Redeem</a></div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="height:12px"></td>
+                        </tr>
+                        <tr>
+                          <td class="product-col" style="width:50%;padding-right:8px;vertical-align:top;">
+                            <table role="presentation" width="100%" style="background:#ffffff;border-radius:6px;">
+                              <tr>
+                                <td style="padding:8px;">
+                                  <img src="https://via.placeholder.com/320x200?text=Kitchen+Mix" alt="Kitchen Mix" width="320" style="width:100%;height:auto;border-radius:6px;" />
+                                  <div style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#111;"><strong>Kitchen Mix</strong></div>
+                                  <div style="font-size:13px;color:#6b7280;margin-top:4px;">Free shipping</div>
+                                  <div style="padding-top:10px;"><a href="https://example.com/product3" style="background:#ff9900;padding:10px 14px;border-radius:4px;color:#111;font-weight:700;text-decoration:none;display:inline-block;">Redeem</a></div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+
+                          <td class="product-col" style="width:50%;padding-left:8px;vertical-align:top;">
+                            <table role="presentation" width="100%" style="background:#ffffff;border-radius:6px;">
+                              <tr>
+                                <td style="padding:8px;">
+                                  <img src="https://via.placeholder.com/320x200?text=Smart+Watch" alt="Smart Watch" width="320" style="width:100%;height:auto;border-radius:6px;" />
+                                  <div style="padding-top:8px;font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#111;"><strong>Smart Watch</strong></div>
+                                  <div style="font-size:13px;color:#6b7280;margin-top:4px;">Best seller</div>
+                                  <div style="padding-top:10px;"><a href="https://example.com/product4" style="background:#ff9900;padding:10px 14px;border-radius:4px;color:#111;font-weight:700;text-decoration:none;display:inline-block;">Redeem</a></div>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- info icons row -->
+            <tr>
+              <td style="padding:0 20px 18px 20px;border-top:1px solid #eef2f6;">
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td style="text-align:center;padding:12px;font-family:Arial,Helvetica,sans-serif;color:#374151;font-size:13px;">
+                      <img src="https://via.placeholder.com/40?text=✓" alt="Fast delivery" width="40" style="display:block;margin:0 auto 8px;" />
+                      Fast delivery
+                    </td>
+                    <td style="text-align:center;padding:12px;font-family:Arial,Helvetica,sans-serif;color:#374151;font-size:13px;">
+                      <img src="https://via.placeholder.com/40?text=🔒" alt="Secure" width="40" style="display:block;margin:0 auto 8px;" />
+                      Secure checkout
+                    </td>
+                    <td style="text-align:center;padding:12px;font-family:Arial,Helvetica,sans-serif;color:#374151;font-size:13px;">
+                      <img src="https://via.placeholder.com/40?text=?" alt="Support" width="40" style="display:block;margin:0 auto 8px;" />
+                      24/7 support
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA footer + legal -->
+            <tr>
+              <td style="padding:16px 20px 20px 20px;background:#fafafa;font-family:Arial,Helvetica,sans-serif;color:#6b7280;font-size:13px;">
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td style="vertical-align:middle;">
+                      <strong style="color:#111">Limited time offer</strong>
+                      <div style="margin-top:6px">Redeem your reward at checkout. Terms apply.</div>
+                    </td>
+                    <td style="text-align:right;vertical-align:middle;">
+                      <a href="https://example.com/redeem" style="background:#ff9900;padding:10px 16px;border-radius:4px;color:#111;font-weight:700;text-decoration:none;display:inline-block;">Redeem</a>
+                    </td>
+                  </tr>
+                </table>
+                <div style="margin-top:12px;color:#9ca3af;font-size:12px;">
+                  If you no longer wish to receive these emails, <a href="#" style="color:#0066c0;">unsubscribe</a>.<br />Questions? <a href="mailto:help@example.com">Contact us</a>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+
+          <!-- small legal outside -->
+          <table role="presentation" width="100%" style="max-width:700px;margin:12px auto 36px auto;text-align:center;font-family:Arial,Helvetica,sans-serif;color:#9ca3af;font-size:12px;">
+            <tr>
+              <td>© 1996-2025, Amazon.com, Inc. or its affiliates</td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>

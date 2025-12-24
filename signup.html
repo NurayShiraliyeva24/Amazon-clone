@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <a href="/"><img class="logo" src="./assets/amazon_logo_dark.png" width="100px" alt=""></a>
+    <div class="login-container">
+        <h1 class="login-title">Create account</h1>
+        <form id="signup-form" action="index.html" method="get">
+            <div id="step1">
+                <h5 class="input-lable">Your name</h5>
+                <input id="name-input" type="text" name="name" placeholder="First and last name" required>
+                <button id="continue-btn" type="button">Continue</button>
+            </div>
+            <div id="step2" style="display: none;">
+                <h5 class="input-lable">Mobile number or email</h5>
+                <input id="email-input" type="text" name="email" required>
+                <button id="continue2-btn" type="button">Continue</button>
+            </div>
+            <div id="step3" style="display: none;">
+                <h5 class="input-lable">Password</h5>
+                <input id="password-input" type="password" name="password" placeholder="At least 6 characters" required>
+                <button id="submit-btn" type="submit">Create account</button>
+            </div>
+        </form>
+        <p class="login-condition">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.</p>
+        <p class="login-help"><a href="#">Need help?</a></p>
+        <hr>
+        <h4>Buying for work?</h4>
+        <p class="login-business"><a href="#">Create a free business account</a></p>
+    </div>
+    <div class="login-section-text">
+        <hr><p>Have a account?</p><hr>
+    </div>
+    <a href="./login.html"><button class="login-signup-btn">Login with Amazon account</button></a>
+    <footer>
+        <div class="footer-links">
+            <a href="#"> Conditions of Use </a>
+            <a href="#"> Privacy Notice </a>
+            <a href="#"> Help </a>
+        </div>
+        <p class="footer-copyright">
+            © 1996-2025, Amazon.com, Inc. or its affiliates
+        </p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const continueBtn = document.getElementById('continue-btn');
+            const continue2Btn = document.getElementById('continue2-btn');
+            const step1 = document.getElementById('step1');
+            const step2 = document.getElementById('step2');
+            const step3 = document.getElementById('step3');
+            const nameInput = document.getElementById('name-input');
+            const emailInput = document.getElementById('email-input');
+
+            continueBtn.addEventListener('click', function () {
+                if (!nameInput.value.trim()) {
+                    alert('Please enter your name');
+                    nameInput.focus();
+                    return;
+                }
+                step1.style.display = 'none';
+                step2.style.display = 'block';
+                emailInput.focus();
+            });
+
+            continue2Btn.addEventListener('click', function () {
+                if (!emailInput.value.trim()) {
+                    alert('Please enter your email or mobile number');
+                    emailInput.focus();
+                    return;
+                }
+                step2.style.display = 'none';
+                step3.style.display = 'block';
+                document.getElementById('password-input').focus();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "amazon-clone-nurayShiraliyeva",
+  "version": "1.0.0",
+  "description": "Preview scripts for email and landing page screenshots",
+  "main": "screenshot.js",
+  "scripts": {
+    "screenshot": "node screenshot.js"
+  },
+  "dependencies": {
+    "puppeteer": "^20.0.0"
+  }
+}
